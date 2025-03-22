@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
           priority
         />
         <ol>
-          <li>
+          <li className={styles.li}>
             Get started by editing <code>app/page.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>

@@ -1,0 +1,89 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended", // Подключите recommended-конфигурацию для import
+    "plugin:import/typescript" // Для поддержки TypeScript
+  ],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "@typescript-eslint", "prettier", "import"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          // Встроенные модули (например, 'react')
+          "external",
+          // Внешние библиотеки (например, 'lodash')
+          "internal",
+          // Внутренние пути (например, '@/components')
+          "parent",
+          // Родительские каталоги (например, '../')
+          "sibling",
+          // Файлы в том же каталоге (например, './styles')
+          "index",
+          // Индексные файлы (например, './index')
+          "object",
+          // Объекты (например, 'styles' в `import styles from './styles.module.css'`)
+          "type"
+          // Типы (например, 'import type { Props } from './types')
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "*.css",
+            "group": "object",
+            "patternOptions": {
+              "matchBase": true
+            }
+          },
+          {
+            "pattern": "*.scss",
+            "group": "object",
+            "patternOptions": {
+              "matchBase": true
+            }
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "always",
+        // Добавляет пустую строку между группами
+        "alphabetize": {
+          "order": "asc",
+          // Сортировка по алфавиту
+          "caseInsensitive": true
+          // Без учёта регистра
+        }
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
+}

@@ -1,0 +1,126 @@
+@import '../../../app/page.module.scss';
+
+$primary: #397DF6;
+$primary_active: #2F68CC;
+$primary_hover: #73A5FF;
+$primary_disabled: #234E99;
+$dark: #333333;
+
+//primary button
+
+.btn {
+  @include H3;
+  max-width: 11.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  color: white;
+  background-color: $primary;
+  text-transform: capitalize;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out,
+      transform 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $primary_hover;
+  }
+
+  &:active {
+    background-color: $primary_active;
+  }
+
+  &:disabled {
+    background-color: $primary_disabled;
+    color: #8D9094;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    border: 2px solid $primary_active;
+  }
+}
+
+//dark button
+
+.dark {
+  background-color: $dark;
+
+  &:hover {
+    background-color: #4C4C4C;
+  }
+
+  &:active {
+    background-color: #212121;
+  }
+
+  &:disabled {
+    background-color: #171717;
+  }
+}
+
+//outlined button
+
+.outlined {
+  background-color: transparent;
+  border-color: $primary;
+  color: $primary;
+
+  &:hover {
+    background-color: transparent;
+    color: $primary_hover;
+    border-color: $primary_hover;
+  }
+
+  &:active {
+    background-color: transparent;
+    color: $primary_active;
+    border-color: $primary_active;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border-color: $primary_disabled;
+    color: $primary_disabled;
+  }
+}
+
+//link button
+
+.link {
+  max-width: fit-content;
+  border: none;
+  color: $primary;
+  background-color: transparent;
+  margin: 0;
+
+  &:hover {
+    color: $primary_hover;
+    background-color: transparent;
+
+  }
+
+  &:active {
+    color: $primary_active;
+    background-color: transparent;
+
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: $primary_disabled;
+
+  }
+}
+//language button
+
+.language {
+  @extend .dark;
+  max-width: fit-content;
+
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './Button.module.scss';
 import Image from "next/image";
-import english_logo from "../../../public/Flag_UnitedKingdom.svg";
-import russian_logo from "../../../public/Flag_Russia.svg";
+import english_flag from "../../../public/Flag_UnitedKingdom.svg";
+import russian_flag from "../../../public/Flag_Russia.svg";
 
 
 type ButtonTypes = 'english' | 'russian'
@@ -12,18 +12,18 @@ type ButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const LanguageButton = ({disabled, variant, ...props}: ButtonProps) => {
-    const logos: Record<ButtonTypes, string> = {
-        english: english_logo,
-        russian: russian_logo,
+    const flags: Record<ButtonTypes, string> = {
+        english: english_flag,
+        russian: russian_flag,
     };
-    const logo = logos[variant];
+    const flag = flags[variant];
     return (
         <button
             className={`${style.btn} ${style.language}`}
             disabled={disabled}
             {...props}
         >
-            <Image src={logo} alt={variant} width={20} height={20}></Image>
+            <Image src={flag} alt={variant} width={20} height={20}></Image>
             {variant}
         </button>
     );

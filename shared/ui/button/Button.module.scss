@@ -1,11 +1,5 @@
 @import '../../../app/page.module.scss';
 
-$primary: #397DF6;
-$primary_active: #2F68CC;
-$primary_hover: #73A5FF;
-$primary_disabled: #234E99;
-$dark: #333333;
-
 //primary button
 
 .btn {
@@ -15,7 +9,7 @@ $dark: #333333;
   border-radius: 2px;
   border: 1px solid transparent;
   color: white;
-  background-color: $primary;
+  background-color: var(--accent-500);
   text-transform: capitalize;
   cursor: pointer;
   display: flex;
@@ -28,31 +22,31 @@ $dark: #333333;
       transform 0.2s ease-in-out;
 
   &:hover {
-    background-color: $primary_hover;
+    background-color: var(--accent-100);
   }
 
   &:active {
-    background-color: $primary_active;
+    background-color: var(--accent-700);
   }
 
   &:disabled {
-    background-color: $primary_disabled;
-    color: #8D9094;
+    background-color: var(--accent-900);
+    color: var(--light-900);
     cursor: not-allowed;
   }
 
   &:focus {
-    border: 2px solid $primary_active;
+    border: 2px solid var(--accent-700);
   }
 }
 
 //dark button
 
 .dark {
-  background-color: $dark;
+  background-color: var(--dark-300);
 
   &:hover {
-    background-color: #4C4C4C;
+    background-color: var(--dark-100);
   }
 
   &:active {
@@ -60,7 +54,7 @@ $dark: #333333;
   }
 
   &:disabled {
-    background-color: #171717;
+    background-color: var(--dark-500);
   }
 }
 
@@ -68,25 +62,25 @@ $dark: #333333;
 
 .outlined {
   background-color: transparent;
-  border-color: $primary;
-  color: $primary;
+  border-color: var(--accent-500);
+  color: var(--accent-500);
 
   &:hover {
     background-color: transparent;
-    color: $primary_hover;
-    border-color: $primary_hover;
+    color: var(--accent-100);
+    border-color: var(--accent-100);
   }
 
   &:active {
     background-color: transparent;
-    color: $primary_active;
-    border-color: $primary_active;
+    color: var(--accent-700);
+    border-color: var(--accent-700);
   }
 
   &:disabled {
     background-color: transparent;
-    border-color: $primary_disabled;
-    color: $primary_disabled;
+    border-color: var(--accent-900);
+    color: var(--accent-900);
   }
 }
 
@@ -95,25 +89,25 @@ $dark: #333333;
 .link {
   max-width: fit-content;
   border: none;
-  color: $primary;
+  color: var(--accent-500);
   background-color: transparent;
   margin: 0;
 
   &:hover {
-    color: $primary_hover;
+    color: var(--accent-100);
     background-color: transparent;
 
   }
 
   &:active {
-    color: $primary_active;
+    color: var(--accent-700);
     background-color: transparent;
 
   }
 
   &:disabled {
     background-color: transparent;
-    color: $primary_disabled;
+    color: var(--accent-900);
 
   }
 }

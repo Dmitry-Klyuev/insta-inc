@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Button.module.scss';
 
+
 type ButtonTypes = 'primary' | 'dark' | 'outlined' | 'link';
 
 type ButtonProps = {

@@ -1,0 +1,120 @@
+@import '../../../app/page.module.scss';
+
+//primary button
+
+.btn {
+  @include H3;
+  max-width: 11.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  color: white;
+  background-color: var(--accent-500);
+  text-transform: capitalize;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out,
+      transform 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--accent-100);
+  }
+
+  &:active {
+    background-color: var(--accent-700);
+  }
+
+  &:disabled {
+    background-color: var(--accent-900);
+    color: var(--light-900);
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    border: 2px solid var(--accent-700);
+  }
+}
+
+//dark button
+
+.dark {
+  background-color: var(--dark-300);
+
+  &:hover {
+    background-color: var(--dark-100);
+  }
+
+  &:active {
+    background-color: #212121;
+  }
+
+  &:disabled {
+    background-color: var(--dark-500);
+  }
+}
+
+//outlined button
+
+.outlined {
+  background-color: transparent;
+  border-color: var(--accent-500);
+  color: var(--accent-500);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--accent-100);
+    border-color: var(--accent-100);
+  }
+
+  &:active {
+    background-color: transparent;
+    color: var(--accent-700);
+    border-color: var(--accent-700);
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border-color: var(--accent-900);
+    color: var(--accent-900);
+  }
+}
+
+//link button
+
+.link {
+  max-width: fit-content;
+  border: none;
+  color: var(--accent-500);
+  background-color: transparent;
+  margin: 0;
+
+  &:hover {
+    color: var(--accent-100);
+    background-color: transparent;
+
+  }
+
+  &:active {
+    color: var(--accent-700);
+    background-color: transparent;
+
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: var(--accent-900);
+
+  }
+}
+//language button
+
+.language {
+  @extend .dark;
+  max-width: fit-content;
+
+}

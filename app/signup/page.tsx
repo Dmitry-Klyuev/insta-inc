@@ -1,11 +1,10 @@
-import {Button} from "@/shared/ui/button/Button";
+import { Input } from '@/shared/ui/input/Input';
 
 const SignUp = () => {
-    return (
-        <div>
-            <h1>signup</h1>
-            <Button variant={'primary'} title={'d'}></Button>
-        </div>
-    )
+  return (
+    <div>
+      <h1>signup</h1>
+    </div>
+  );
 };
-export default SignUp
+export default SignUp;

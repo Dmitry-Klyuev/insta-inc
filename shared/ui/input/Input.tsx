@@ -52,7 +52,7 @@ export const Input = ({
     alert('search');
   };
   return (
-    <div style={{ backgroundColor: 'black', padding: '20px' }}>
+    <>
       <div className={styles.input_container}>
         {type === 'search' && (
           <button className={styles.btn_search} onClick={searchOnclick}>
@@ -77,6 +77,6 @@ export const Input = ({
         )}
       </div>
       {error && <span className={styles.error_message}>Error</span>}
-    </div>
+    </>
   );
 };

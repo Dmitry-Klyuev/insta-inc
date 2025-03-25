@@ -1,73 +1,73 @@
 @mixin Large {
   font-size: 26px;
   line-height: 36px;
-  width: 600px;
+  font-weight: 600;
 }
 
 @mixin H1 {
   font-size: 20px;
   line-height: 36px;
-  width: 700px;
+  font-weight: 700;
 }
 
 @mixin H2 {
   font-size: 18px;
   line-height: 24px;
-  width: 700px;
+  font-weight: 700;
 }
 
 @mixin H3 {
   font-size: 16px;
   line-height: 24px;
-  width: 600px;
+  font-weight: 600;
 }
 
 @mixin Regular_text_16 {
   font-size: 16px;
   line-height: 24px;
-  width: 400px;
+  font-weight: 400;
 }
 
 @mixin Bold_text_16 {
   font-size: 16px;
   line-height: 24px;
-  width: 700px;
+  font-weight: 700;
 }
 
 @mixin Regular_text_14 {
   font-size: 14px;
   line-height: 24px;
-  width: 400px;
+  font-weight: 400;
 }
 
 @mixin Medium_text_14 {
   font-size: 14px;
   line-height: 24px;
-  width: 500px;
+  font-weight: 500;
 }
 
 @mixin Bold_text_14 {
   font-size: 14px;
   line-height: 24px;
-  width: 700px;
+  font-weight: 700;
 }
 
 @mixin Small_text {
   font-size: 12px;
   line-height: 16px;
-  width: 400px;
+  font-weight: 400;
 }
 
 @mixin Semi-bold_small_text {
   font-size: 12px;
   line-height: 16px;
-  width: 600px;
+  font-weight: 600;
 }
 
 @mixin Regular_link {
   font-size: 14px;
   line-height: 24px;
-  width: 400px;
+  font-weight: 400;
   cursor: pointer;
   text-decoration: underline;
   color: var(--accent-500);
@@ -76,8 +76,12 @@
 @mixin Small_link {
   font-size: 12px;
   line-height: 16px;
-  width: 400px;
+  font-weight: 400;
   cursor: pointer;
   text-decoration: underline;
   color: var(--accent-500);
+}
+
+.page{
+  background: var(--light-500);
 }

@@ -1,5 +1,3 @@
-import { Input } from '@/shared/ui/input/Input';
-
 const SignUp = () => {
   return (
     <div>

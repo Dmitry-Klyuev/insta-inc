@@ -1,0 +1,41 @@
+@import '../../../app/page.module.scss';
+
+
+.alert_container {
+  max-width: 390px;
+  max-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  @include Regular_text_16;
+  color: var(--light-100);
+  border-radius: 2px;
+  padding: 20px;
+  font-family: Inter, sans-serif;
+}
+
+.success {
+  background-color: var(--success-900);
+  border: 1px solid var(--success-500);
+}
+
+.error {
+  background-color: var(--danger-900);
+  border: 1px solid var(--danger-500);
+
+}
+
+.closed {
+  display: none;
+}
+
+.close_button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 5px;
+}

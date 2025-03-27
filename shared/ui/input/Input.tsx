@@ -50,46 +50,44 @@ export const Input = ({
   };
   return (
     <>
-      <div style={{ backgroundColor: 'black' }}>
-        <div className={styles.input_container}>
-          {type === 'search' && (
-            <button className={styles.btn_search} onClick={searchOnclick}>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className={styles.svg_search}
-              >
-                <use xlinkHref="/sprite/sprite-icons.svg#search-outline" />
-              </svg>
-            </button>
-          )}
-          <label className={styles.input_label}>{label}</label>
-          <input
-            className={`${styles.input_body} ${type === 'search' ? styles.input_search : ''} ${error ? styles.error : ''}`}
-            type={showPassword ? 'text' : type}
-            placeholder={defaultPlaceholder}
-            disabled={disabled}
-            {...props}
-          />
-          {type === 'password' && (
-            <button
-              className={styles.btn_show_password}
-              onClick={showPasswordToggle}
+      <div className={styles.input_container}>
+        {type === 'search' && (
+          <button className={styles.btn_search} onClick={searchOnclick}>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className={styles.svg_search}
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className={styles.svg_showPassoword}
-              >
-                <use xlinkHref="/sprite/sprite-icons.svg#eye-outline" />
-              </svg>
-            </button>
-          )}
-        </div>
-        {error && <span className={styles.error_message}>Error</span>}
+              <use xlinkHref="/sprite/sprite-icons.svg#search-outline" />
+            </svg>
+          </button>
+        )}
+        <label className={styles.input_label}>{label}</label>
+        <input
+          className={`${styles.input_body} ${type === 'search' ? styles.input_search : ''} ${error ? styles.error : ''}`}
+          type={showPassword ? 'text' : type}
+          placeholder={defaultPlaceholder}
+          disabled={disabled}
+          {...props}
+        />
+        {type === 'password' && (
+          <button
+            className={styles.btn_show_password}
+            onClick={showPasswordToggle}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className={styles.svg_showPassoword}
+            >
+              <use xlinkHref="/sprite/sprite-icons.svg#eye-outline" />
+            </svg>
+          </button>
+        )}
       </div>
+      {error && <span className={styles.error_message}>Error</span>}
     </>
   );
 };

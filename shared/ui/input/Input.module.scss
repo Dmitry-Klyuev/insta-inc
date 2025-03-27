@@ -1,5 +1,6 @@
 @import '../../../app/page.module.scss';
 
+
 .input_container {
   display: flex;
   flex-direction: column;
@@ -7,13 +8,18 @@
   justify-content: flex-start;
   position: relative;
   max-width: 280px;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .input_body {
   @include Regular_text_16;
   width: 280px;
   color: var(--light-900);
-  font-family: Inter;
+  font-family: Inter sans-serif;
   box-sizing: border-box;
   background-color: inherit;
   border: 1px solid var(--dark-100);
@@ -26,15 +32,28 @@
 
   &:focus-visible {
     outline: 2px solid blue;
+
+    & svg {
+      stroke: var(--light-100);
+    }
   }
 
   &:active {
     outline: 2px solid var(--light-100);
     color: var(--light-100);
+
+    & svg {
+      stroke: var(--light-100);
+    }
   }
 
   &:hover {
     cursor: text;
+
+    & svg {
+      stroke: var(--light-100);
+      fill: var(--light-100);
+    }
   }
 
   &:disabled {
@@ -58,9 +77,6 @@
   cursor: pointer;
   position: absolute;
 
-  &img {
-    padding: 0;
-  }
 }
 
 .btn_show_password {
@@ -89,4 +105,14 @@
 .error_message {
   color: var(--danger-500);
   @include Regular_text_14;
+}
+
+.svg_search {
+  stroke: var(--light-900);
+  fill: var(--light-900);
+}
+
+.svg_showPassword {
+  stroke: var(--light-100);
+  fill: var(--light-100);
 }

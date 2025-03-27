@@ -1,0 +1,26 @@
+.sidebar_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: fit-content;
+  background: black;
+
+  li {
+    list-style: none;
+  }
+}
+
+.item_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  color: var(--light-100);
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+}

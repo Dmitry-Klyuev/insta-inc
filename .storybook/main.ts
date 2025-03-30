@@ -3,7 +3,9 @@ import type { StorybookConfig } from "@storybook/experimental-nextjs-vite";
 const config: StorybookConfig = {
   "stories": [
     "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../shared/ui/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+
   ],
   "addons": [
     "@storybook/addon-essentials",

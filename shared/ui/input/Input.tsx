@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 
 import styles from './Input.module.scss';
 
-import eyeIcon from '../../../public/eye-outline.svg';
-import searchIcon from '../../../public/search-outline.svg';
-
 import Image from 'next/image';
 
 type BasicInputTypes = 'text' | 'password' | 'email' | 'search';
@@ -56,7 +53,14 @@ export const Input = ({
       <div className={styles.input_container}>
         {type === 'search' && (
           <button className={styles.btn_search} onClick={searchOnclick}>
-            <Image src={searchIcon} alt={'search'}></Image>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className={styles.svg_search}
+            >
+              <use xlinkHref="/sprite/sprite-icons.svg#search-outline" />
+            </svg>
           </button>
         )}
         <label className={styles.input_label}>{label}</label>
@@ -72,7 +76,14 @@ export const Input = ({
             className={styles.btn_show_password}
             onClick={showPasswordToggle}
           >
-            <Image src={eyeIcon} alt={'show password'}></Image>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className={styles.svg_showPassoword}
+            >
+              <use xlinkHref="/sprite/sprite-icons.svg#eye-outline" />
+            </svg>
           </button>
         )}
       </div>

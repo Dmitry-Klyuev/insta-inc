@@ -1,23 +1,26 @@
 import type { InputHTMLAttributes } from 'react';
-import s from './checkbox.module.scss';
+
+import { clsx } from 'clsx';
+
+import s from './Checkbox.module.scss';
 
 type CheckboxProps = {
-  title?: string;
+  value?: string;
   disabled?: boolean;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Checkbox = ({ title, disabled, ...props }: CheckboxProps) => {
+export const Checkbox = ({ value, disabled, ...props }: CheckboxProps) => {
   return (
-    <label className={`${s.label} ${disabled ? s.disabled : ''}`}>
-      <div className={`${s.checkboxContainer} ${disabled ? s.disabled : ''}`}>
+    <label className={clsx(s.label, disabled && s.disabled)}>
+      <div className={clsx(s.checkboxContainer, disabled && s.disabled)}>
         <input
-          className={`${s.checkbox} ${disabled ? s.disabled : ''}`}
+          className={clsx(s.checkbox, disabled && s.disabled)}
           type="checkbox"
           disabled={disabled}
           {...props}
         />
       </div>
-      {title}
+      {value}
     </label>
   );
 };

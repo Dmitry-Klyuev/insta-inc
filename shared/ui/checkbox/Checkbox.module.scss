@@ -1,6 +1,5 @@
-@import "app/globals.css";
-@import "app/page.module";
-
+@import "../../../app/page.module.scss";
+@import "../../../app/globals.css";
 
 $disabled-cursor: not-allowed;
 $cursor-pointer: pointer;
@@ -31,7 +30,6 @@ $cursor-pointer: pointer;
 }
 
 .checkboxContainer {
-
   padding: 9px;
   border-radius: 50%;
   display: flex;
@@ -45,7 +43,6 @@ $cursor-pointer: pointer;
   &:has(input:active) {
     background-color: var(--dark-100);
   }
-
 
   &:focus-within {
     background-color: var(--dark-500);

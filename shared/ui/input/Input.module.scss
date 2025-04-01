@@ -1,0 +1,118 @@
+@import '../../../app/page.module.scss';
+
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 280px;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.input_body {
+  @include Regular_text_16;
+  width: 280px;
+  color: var(--light-900);
+  font-family: Inter sans-serif;
+  box-sizing: border-box;
+  background-color: inherit;
+  border: 1px solid var(--dark-100);
+  border-radius: 2px;
+  padding-left: 10px;
+
+  &:focus:not(:focus-visible) {
+    outline: 2px solid var(--light-100);
+  }
+
+  &:focus-visible {
+    outline: 2px solid blue;
+
+    & svg {
+      stroke: var(--light-100);
+    }
+  }
+
+  &:active {
+    outline: 2px solid var(--light-100);
+    color: var(--light-100);
+
+    & svg {
+      stroke: var(--light-100);
+    }
+  }
+
+  &:hover {
+    cursor: text;
+
+    & svg {
+      stroke: var(--light-100);
+      fill: var(--light-100);
+    }
+  }
+
+  &:disabled {
+    color: var(--dark-100);
+    cursor: not-allowed;
+  }
+}
+
+.input_label {
+  @extend .input_body;
+  @include Regular_text_14;
+  border: none;
+  text-transform: capitalize;
+  padding: 0;
+
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+
+}
+
+.btn_show_password {
+  @extend .btn;
+  right: 0;
+  top: 75%;
+  transform: translateY(-50%);
+
+}
+
+.btn_search {
+  @extend .btn;
+  left: 0;
+  top: 75%;
+  transform: translateY(-50%);
+}
+
+.input_search {
+  padding-left: 30px
+}
+
+.error {
+  border-color: var(--danger-500);
+}
+
+.error_message {
+  color: var(--danger-500);
+  @include Regular_text_14;
+}
+
+.svg_search {
+  stroke: var(--light-900);
+  fill: var(--light-900);
+}
+
+.svg_showPassword {
+  stroke: var(--light-100);
+  fill: var(--light-100);
+}

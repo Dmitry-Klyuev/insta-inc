@@ -1,0 +1,54 @@
+@import '../../../app/page.module.scss';
+
+.wrapper {
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  @include Regular_text_16;
+  color: var(--light-900);
+
+  &.textDisbled {
+    color: var(--dark-100);
+  }
+}
+.textArea {
+  padding: 6px 12px;
+  border: 1px solid var(--dark-100);
+  border-radius: 2px;
+  background: var(--dark-500);
+  @include Regular_text_16;
+  color: var(--light-900);
+  resize: none;
+
+  &:focus {
+    outline: none;
+    color: var(--light-100);
+    border: 2px solid var(--accent-700);
+  }
+
+  &:active {
+    outline: none;
+    color: var(--light-100);
+    border: 1px solid var(--light-100);
+  }
+
+  &:disabled {
+    border: 1px solid var(--dark-100);
+    color: var(--dark-100);
+    cursor: not-allowed;
+  }
+}
+
+.areaError {
+  border: 1px solid var(--danger-500) !important;
+  color: var(--light-100) !important;
+}
+
+.error {
+  font-size: 12px;
+  color: var(--danger-500);
+}

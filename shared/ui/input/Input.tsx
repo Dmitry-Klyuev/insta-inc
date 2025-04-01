@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 
 import styles from './Input.module.scss';
 
-import Image from 'next/image';
-
 type BasicInputTypes = 'text' | 'password' | 'email' | 'search';
 type InputProps = {
   label: string;

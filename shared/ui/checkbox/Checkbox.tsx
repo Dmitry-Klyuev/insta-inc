@@ -2,6 +2,8 @@ import type { InputHTMLAttributes } from 'react';
 
 import { clsx } from 'clsx';
 
+import { IconSvg } from '../iconSvg/IconSvg';
+
 import s from './Checkbox.module.scss';
 
 type CheckboxProps = {
@@ -18,6 +20,12 @@ export const Checkbox = ({ value, disabled, ...props }: CheckboxProps) => {
           type="checkbox"
           disabled={disabled}
           {...props}
+        />
+        <IconSvg
+          width="17"
+          height="17"
+          iconId={'checkmark-outline'}
+          className={s.svg}
         />
       </div>
       {value}

@@ -1,0 +1,32 @@
+.card {
+  box-sizing: border-box;
+  max-width: 300px;
+  min-height: 79px;
+  background-color: var(--dark-500);
+  color: var(--light-100);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.content{
+  display: flex;
+  align-items: center;
+  gap: 13px
+}
+
+.checkbox{
+  width: 20px;
+  height: 20px;
+  border-radius: 1px;
+  background: var(--light-100);
+}
+
+.text{
+}
+
+.svg{
+  display: flex;
+  align-items: center;
+}

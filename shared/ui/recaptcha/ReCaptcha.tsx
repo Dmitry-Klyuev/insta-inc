@@ -5,16 +5,31 @@ import * as Checkbox from '@radix-ui/react-checkbox';
 
 import s from './ReCaptcha.module.scss';
 
-export const ReCaptcha = () => {
+interface ReCaptchaProps {
+  checked?: boolean;
+}
+
+export const ReCaptcha = ({ checked }: ReCaptchaProps) => {
   return (
     <div className={s.card}>
       <div className={s.content}>
-        <Checkbox.Root className={s.checkbox}>
-          <Checkbox.Indicator>тут будут иконки</Checkbox.Indicator>
+        <Checkbox.Root className={s.checkbox} checked={checked}>
+          <Checkbox.Indicator>
+            {checked && (
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                className={s.customCheck}
+              >
+                <use xlinkHref="/sprite/sprite-icons.svg#checkmark-outline" />
+              </svg>
+            )}
+          </Checkbox.Indicator>
         </Checkbox.Root>
         <span className={s.text}>I’m not a robot</span>
       </div>
-      <div className={s.svg}>
+      <div className={s.icon}>
         <svg
           width="44"
           height="55"

@@ -33,27 +33,18 @@
   &:focus-visible {
     outline: 2px solid blue;
 
-    & svg {
-      stroke: var(--light-100);
-    }
+
   }
 
   &:active {
     outline: 2px solid var(--light-100);
     color: var(--light-100);
 
-    & svg {
-      stroke: var(--light-100);
-    }
   }
 
   &:hover {
     cursor: text;
 
-    & svg {
-      stroke: var(--light-100);
-      fill: var(--light-100);
-    }
   }
 
   &:disabled {
@@ -105,14 +96,4 @@
 .error_message {
   color: var(--danger-500);
   @include Regular_text_14;
-}
-
-.svg_search {
-  stroke: var(--light-900);
-  fill: var(--light-900);
-}
-
-.svg_showPassword {
-  stroke: var(--light-100);
-  fill: var(--light-100);
 }

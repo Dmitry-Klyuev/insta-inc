@@ -55,7 +55,7 @@ export const Radio_Group = ({
         </Radio.Item>
         <label
           htmlFor={title}
-          className={clsx(styles.Label, disable && 'disabled')}
+          className={clsx(styles.Label, disable && styles.disabled)}
         >
           {title}
         </label>

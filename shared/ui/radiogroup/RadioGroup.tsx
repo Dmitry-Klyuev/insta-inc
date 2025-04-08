@@ -3,6 +3,7 @@
 import React from 'react';
 
 import * as Radio from '@radix-ui/react-radio-group';
+import clsx from 'clsx';
 
 import styles from './RadioGroup.module.scss';
 
@@ -10,18 +11,25 @@ type RadioGroupProps = {
   title?: string;
   status?: boolean;
   onClick?: () => void;
+  disable?: boolean;
 };
 
-export const Radio_Group = ({ title, status, onClick }: RadioGroupProps) => {
+export const Radio_Group = ({
+  title,
+  status,
+  onClick,
+  disable,
+}: RadioGroupProps) => {
   return (
     <>
-      <Radio.Root className={styles.Root}>
+      <Radio.Root className={styles.Root} disabled={true}>
         <Radio.Item
           value={'qwe'}
           className={styles.Item}
           onClick={onClick}
           title={title}
           id={title}
+          // disabled={disable}
         >
           {status && (
             <svg
@@ -44,9 +52,11 @@ export const Radio_Group = ({ title, status, onClick }: RadioGroupProps) => {
               <use xlinkHref="/sprite/sprite-icons.svg#radio-button-unchecked" />
             </svg>
           )}
-          {/*<Radio.Indicator />*/}
         </Radio.Item>
-        <label htmlFor={title} className={styles.Label}>
+        <label
+          htmlFor={title}
+          className={clsx(styles.Label, disable && 'disabled')}
+        >
           {title}
         </label>
       </Radio.Root>

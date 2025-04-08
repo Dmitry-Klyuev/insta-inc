@@ -22,14 +22,13 @@ export const Radio_Group = ({
 }: RadioGroupProps) => {
   return (
     <>
-      <Radio.Root className={styles.Root} disabled={true}>
+      <Radio.Root className={styles.Root} disabled={disable}>
         <Radio.Item
           value={'qwe'}
           className={styles.Item}
           onClick={onClick}
           title={title}
           id={title}
-          // disabled={disable}
         >
           {status && (
             <svg

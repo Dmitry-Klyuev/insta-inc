@@ -26,13 +26,9 @@
   @include Regular_text_14;
   color: var(--light-100);
   cursor: pointer;
-  &:disabled{
-    color: var(--light-900);
-  }
 }
 
 .disabled {
   cursor: not-allowed;
-  color: var(--light-900);;
-
+  color: var(--light-900);
 }

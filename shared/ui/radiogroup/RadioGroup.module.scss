@@ -14,8 +14,8 @@
   height: 25px;
   border-radius: 100%;
   box-shadow: 0 2px 10px var(--black-a7);
-  &:hover {
-
+  &:focus {
+    box-shadow: 0 0 0 2px var(--light-900);
   }
   &:disabled {
     background-color: var(--light-900);

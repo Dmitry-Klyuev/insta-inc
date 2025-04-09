@@ -30,7 +30,7 @@ export const Radio_Group = ({
           title={title}
           id={title}
         >
-          {status && (
+          {status ? (
             <svg
               width="24"
               height="24"
@@ -39,9 +39,7 @@ export const Radio_Group = ({
             >
               <use xlinkHref="/sprite/sprite-icons.svg#radio-button-checked" />
             </svg>
-          )}
-
-          {!status && (
+          ) : (
             <svg
               width="24"
               height="24"

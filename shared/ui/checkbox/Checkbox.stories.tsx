@@ -33,7 +33,6 @@ export default meta;
 
 type Story = StoryObj<typeof Checkbox>;
 
-// Стандартное состояние
 export const Default: Story = {
   args: {
     value: 'Default Checkbox',

@@ -1,0 +1,19 @@
+.languageItemWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  & > span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+  }
+
+  @container (max-width: 100px) {
+    span {
+      display: none;
+      margin-right: 0;
+    }
+  }
+}

@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 
 import styles from './Input.module.scss';
 
-import Image from 'next/image';
-
 type BasicInputTypes = 'text' | 'password' | 'email' | 'search';
 type InputProps = {
   label: string;
@@ -53,12 +51,7 @@ export const Input = ({
       <div className={styles.input_container}>
         {type === 'search' && (
           <button className={styles.btn_search} onClick={searchOnclick}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className={styles.svg_search}
-            >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <use xlinkHref="/sprite/sprite-icons.svg#search-outline" />
             </svg>
           </button>
@@ -80,7 +73,7 @@ export const Input = ({
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              className={styles.svg_showPassoword}
+              fill={'currentColor'}
             >
               <use xlinkHref="/sprite/sprite-icons.svg#eye-outline" />
             </svg>

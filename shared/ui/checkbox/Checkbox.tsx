@@ -2,7 +2,7 @@ import type { InputHTMLAttributes } from 'react';
 
 import { clsx } from 'clsx';
 
-import { IconSvg } from '../iconSvg/IconSvg';
+import { IconSvg } from './iconSvg/IconSvg';
 
 import s from './Checkbox.module.scss';
 

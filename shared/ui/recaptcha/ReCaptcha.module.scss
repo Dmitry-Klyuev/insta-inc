@@ -1,5 +1,5 @@
 @import '../../../app/page.module.scss';
-.errorWrapper{
+.errorWrapper {
   box-sizing: border-box;
   border: 1px solid var(--danger-500);
   padding: 5px;
@@ -17,26 +17,24 @@
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--dark-300)
-
 }
 
-.content{
+.content {
   display: flex;
   align-items: center;
   gap: 13px;
   position: relative;
 }
 
-.checkbox{
+.checkbox {
   width: 20px;
   height: 20px;
   border-radius: 1px;
   background: var(--light-100);
-
   transition: all 0.3s ease-in-out;
 }
 
-.customCheck{
+.customCheck {
   position: absolute;
   top: -7px;
   left: -10px;
@@ -48,11 +46,11 @@
   transition: all 0.3s ease-in-out;
 }
 
-.text{
+.text {
   @include Small_text;
 }
 
-.icon{
+.icon {
   display: flex;
   align-items: center;
 }
@@ -97,7 +95,7 @@
   min-width: 170px;
 }
 
-.textError{
+.textError {
   font-weight: 400;
   font-size: 10px;
   color: var(--danger-500);

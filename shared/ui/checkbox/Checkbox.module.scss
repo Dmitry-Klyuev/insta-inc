@@ -1,0 +1,90 @@
+@import "../../../app/page.module.scss";
+@import "../../../app/globals.css";
+
+$disabled-cursor: not-allowed;
+$cursor-pointer: pointer;
+
+.label {
+  @include Regular_text_14;
+  color: var(--light-100);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: fit-content;
+  cursor: $cursor-pointer;
+
+  &.disabled {
+    cursor: $disabled-cursor;
+    color: var(--light-900)
+  }
+}
+
+.checkboxContainer {
+  padding: 9px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &:hover {
+    background-color: var(--dark-300);
+  }
+
+  &:has(input:active) {
+    background-color: var(--dark-100);
+  }
+
+  &:focus-within {
+    background-color: var(--dark-500);
+  }
+
+  &.disabled {
+    background-color: transparent;
+
+    &:has(input:active) {
+      background-color: transparent;
+    }
+  }
+}
+
+.checkbox {
+  appearance: none;
+  position: relative;
+  border: 2px solid var(--light-100);
+  width: 18px;
+  height: 18px;
+  border-radius: 10%;
+  cursor: $cursor-pointer;
+  z-index: 1;
+  margin: 0;
+
+  &:checked ~ .svg {
+    display: block;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.disabled {
+    border-color: var(--dark-100);
+    cursor: $disabled-cursor;
+  }
+}
+
+.svg {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  transform: translate(-50%, -50%);
+  display: none;
+  pointer-events: none;
+  background-color: var(--light-100);
+  color: var(--dark-900);
+
+  .checkbox.disabled:checked ~ & {
+    color: var(--light-700);
+    background-color: var(--dark-100);
+  }
+}

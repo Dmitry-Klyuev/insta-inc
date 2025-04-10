@@ -1,0 +1,140 @@
+@import '../../../app/page.module.scss';
+
+.container {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.pagination {
+  @include Regular_text_14;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--light-100);
+}
+
+.button {
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background-color: transparent;
+  color: var(--light-100);
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+  &:focus-visible {
+    outline-color: var(--accent-700);
+    outline-width: 1px;
+  }
+}
+
+.pageItem {
+  height: 24px;
+  padding: 0 8px;
+  &:active {
+    @extend .active
+  }
+  &:hover {
+    background-color: var(--dark-500);
+  }
+}
+
+.active {
+  background-color: var(--light-100);
+  color: var(--dark-900);
+  &:hover {
+    background-color: var(--light-100);
+  }
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowSvg {
+  fill: var(--light-100);
+  width: 16px;
+  height: 16px;
+}
+
+.disabled {
+  fill: var(--dark-100);
+}
+
+.selectBlock {
+  display: flex;
+}
+
+.text {
+  @include Regular_text_14;
+  color: var(--light-100);
+  white-space: nowrap;
+  &:first-child {
+    margin-right: 4px;
+  }
+  &:last-child {
+    margin-left: 10px;
+  }
+}
+
+.trigger {
+  @include Regular_text_14;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px 0 6px;
+  border: 1px solid var(--dark-300);
+  border-radius: 2px;
+  background: var(--dark-500);
+  color: var(--light-100);
+  width: 50px;
+  height: 24px;
+  cursor: pointer;
+  &:focus-visible {
+    outline: 1px solid var(--accent-700);
+  }
+}
+
+.selectIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectIconSvg {
+  fill: var(--light-100);
+  width: 16px;
+  height: 16px;
+}
+
+.content {
+  @include Regular_text_14;
+  background: var(--dark-500);
+  color: var(--light-100);
+  border: 1px solid var(--dark-300);
+  border-radius: 2px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.item {
+  @include Regular_text_14;
+  padding-left: 6px;
+  cursor: pointer;
+  user-select: none;
+
+  &[data-highlighted] {
+    background-color: var(--dark-100);
+    outline: none;
+  }
+}
+
+.indicator {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}

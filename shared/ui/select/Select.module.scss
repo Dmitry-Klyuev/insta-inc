@@ -1,0 +1,93 @@
+@import '../../../app/page.module.scss';
+
+.label {
+  @include Regular_text_14;
+  color: var(--light-900);
+}
+
+.trigger {
+  @include Regular_text_16;
+  color: var(--light-900);
+  background-color: var(--dark-700);
+  border: 1px solid var(--dark-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px 12px;
+  cursor: pointer;
+  pointer-events: auto;
+  overflow: hidden;
+  border-radius: 2px;
+  user-select: none;
+  container-type: inline-size;
+
+  &:disabled {
+    color: var(--dark-100);
+    border: 1px solid var(--dark-100);
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-500);
+  }
+
+  &[data-state='open'] {
+    background-color: var(--dark-500);
+    border-color: var(--light-100);
+    color: var(--light-100);
+  }
+}
+
+.triggerWithLabel {
+  color: var(--light-100)
+}
+
+.value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.iconArrowsWrapper {
+  display: flex;
+  justify-content: center;
+  color: var(--light-100);
+}
+
+.content {
+  @include Regular_text_16;
+  width: var(--radix-select-trigger-width);
+  max-height: var(--radix-select-content-available-height);
+  color: var(--light-100);
+  border: 1px solid var(--light-100);
+  margin: -1px 0;
+
+  &[data-state='open'] {
+    background-color: var(--dark-500);
+  }
+}
+
+.triggerAndContentContainer:hover {
+  .trigger,
+  .content {
+    color: var(--light-900);
+    background-color: var(--dark-500);
+  }
+}
+
+.item {
+  padding: 6px 12px;
+  cursor: pointer;
+  word-break: break-word;
+  outline: none;
+
+  &[data-highlighted] {
+    color: var(--accent-500);
+  }
+
+  &:hover {
+    color: var(--accent-500);
+    background-color: var(--dark-300);
+  }
+}

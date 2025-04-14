@@ -15,11 +15,14 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-select':
-        specifier: ^2.1.6
+        specifier: ^2.1.7
         version: 2.1.7(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@reduxjs/toolkit':
         specifier: ^2.6.1
         version: 2.6.1(react@19.0.0)
+      '@storybook/preview-api':
+        specifier: ^8.6.12
+        version: 8.6.12(storybook@8.6.8(prettier@3.5.3))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1519,6 +1522,11 @@ packages:
 
   '@storybook/manager-api@8.6.8':
     resolution: {integrity: sha512-MTyMYRXSP0iRE5xaFCNdD8ZBrhtJXTDNhQTWsjZQBmYgA94mf6FHSzsgGgOQp/sqTPzONZpBCrw7Y0aY8zxHKw==}
+    peerDependencies:
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+
+  '@storybook/preview-api@8.6.12':
+    resolution: {integrity: sha512-84FE3Hrs0AYKHqpDZOwx1S/ffOfxBdL65lhCoeI8GoWwCkzwa9zEP3kvXBo/BnEDO7nAfxvMhjASTZXbKRJh5Q==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -5458,6 +5466,10 @@ snapshots:
       storybook: 8.6.8(prettier@3.5.3)
 
   '@storybook/manager-api@8.6.8(storybook@8.6.8(prettier@3.5.3))':
+    dependencies:
+      storybook: 8.6.8(prettier@3.5.3)
+
+  '@storybook/preview-api@8.6.12(storybook@8.6.8(prettier@3.5.3))':
     dependencies:
       storybook: 8.6.8(prettier@3.5.3)
 

@@ -1,3 +1,5 @@
+'use client';
+
 import {
   type ComponentProps,
   type CSSProperties,
@@ -11,7 +13,7 @@ import { IconSvg } from '../checkbox/iconSvg/IconSvg';
 
 import { LanguageItem, type SelectLanguageItem } from './LanguageItem';
 
-import s from './Select.module.scss';
+import styles from './Select.module.scss';
 
 export type SelectProps = {
   /** Label text displayed above the select */
@@ -65,20 +67,23 @@ export const Select = ({
 
   return (
     <>
-      <span className={s.label}>{label}</span>
+      <span className={styles.label}>{label}</span>
       <SelectRadix.Root
         onOpenChange={handleOpenChange}
         onValueChange={onChange}
         value={value}
         {...props}
       >
-        <div className={s.triggerAndContentContainer} style={mergedSelectStyle}>
+        <div
+          className={styles.triggerAndContentContainer}
+          style={mergedSelectStyle}
+        >
           <SelectRadix.Trigger
             ref={triggerRef}
-            className={`${s.trigger} ${label ? s.triggerWithLabel : ''}`}
+            className={`${styles.trigger} ${label ? styles.triggerWithLabel : ''}`}
             style={mergedSelectStyle}
           >
-            <div className={s.value}>
+            <div className={styles.value}>
               {selectedLanguage ? (
                 <LanguageItem
                   language={(value as SelectLanguageItem) || 'Russian'}
@@ -89,7 +94,7 @@ export const Select = ({
                 </SelectRadix.Value>
               )}
             </div>
-            <SelectRadix.Icon className={s.iconArrowsWrapper}>
+            <SelectRadix.Icon className={styles.iconArrowsWrapper}>
               {isOpen ? (
                 <IconSvg iconId={'arrow-ios-Up'} />
               ) : (
@@ -97,16 +102,16 @@ export const Select = ({
               )}
             </SelectRadix.Icon>
           </SelectRadix.Trigger>
-          <SelectRadix.Content className={s.content} position="popper">
+          <SelectRadix.Content className={styles.content} position="popper">
             <SelectRadix.Viewport>
               {selectedLanguage ? (
                 <>
-                  <SelectRadix.Item value="Russian" className={s.item}>
+                  <SelectRadix.Item value="Russian" className={styles.item}>
                     <SelectRadix.ItemText asChild>
                       <LanguageItem language={'Russian'} />
                     </SelectRadix.ItemText>
                   </SelectRadix.Item>
-                  <SelectRadix.Item value="English" className={s.item}>
+                  <SelectRadix.Item value="English" className={styles.item}>
                     <SelectRadix.ItemText asChild>
                       <LanguageItem language={'English'} />
                     </SelectRadix.ItemText>
@@ -117,7 +122,7 @@ export const Select = ({
                   <SelectRadix.Item
                     key={index}
                     value={String(item)}
-                    className={s.item}
+                    className={styles.item}
                   >
                     <SelectRadix.ItemText>{item}</SelectRadix.ItemText>
                   </SelectRadix.Item>

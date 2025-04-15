@@ -1,8 +1,9 @@
+'use client';
 import { CSSProperties, TextareaHTMLAttributes } from 'react';
 
 import clsx from 'clsx';
 
-import s from './TextArea.module.scss';
+import styles from './TextArea.module.scss';
 
 export interface TextAreaProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -28,20 +29,20 @@ export const TextArea = ({
   };
 
   return (
-    <div className={clsx(s.wrapper, className)}>
+    <div className={clsx(styles.wrapper, className)}>
       {title && (
-        <label className={clsx(s.title, disabled && s.textDisbled)}>
+        <label className={clsx(styles.title, disabled && styles.text_disabled)}>
           {title}
         </label>
       )}
       <textarea
-        className={clsx(s.textArea, error && s.areaError, className)}
+        className={clsx(styles.textArea, error && styles.area_error, className)}
         style={mergedTextAreaStyle}
         placeholder={props.placeholder}
         disabled={disabled}
         {...props}
       />
-      {error && <label className={s.error}>{error}</label>}
+      {error && <label className={styles.error}>{error}</label>}
     </div>
   );
 };

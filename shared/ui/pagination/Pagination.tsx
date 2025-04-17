@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 import * as React from 'react';
 
 import * as Select from '@radix-ui/react-select';
@@ -9,7 +9,7 @@ import styles from './Pagination.module.scss';
 
 const limits = [10, 20, 30, 50, 100];
 
-export type PaginationProps = {
+export type Props = {
   totalCount: number;
   siblingCount?: number;
   currentPage: number;
@@ -25,7 +25,7 @@ export const Pagination = ({
   onPageChange,
   currentPage,
   onPageSizeChange,
-}: PaginationProps) => {
+}: Props) => {
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -33,7 +33,7 @@ export const Pagination = ({
     pageSize,
   });
 
-  if (!paginationRange || currentPage === 0 || paginationRange.length < 2) {
+  if (!paginationRange) {
     return null;
   }
 

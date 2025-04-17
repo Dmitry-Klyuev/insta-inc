@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import React, { type ReactNode } from 'react';
 

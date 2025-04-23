@@ -1,46 +1,39 @@
-import { Alert } from 'shared/ui/alert/Alert';
-
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tab } from 'shared/ui/tabs/Tab';
+
+const mockTabs = [
+  {
+    label: 'Tab 1',
+    content: <p>This is the content for Tab 1</p>,
+  },
+  {
+    label: 'Tab 2',
+    content: <p>This is the content for Tab 2</p>,
+  },
+  {
+    label: 'Disabled Tab',
+    content: <p>This tab is disabled</p>,
+    disabled: true,
+  },
+];
 
 const meta: Meta<typeof Tab> = {
   title: 'UI/Tab',
   component: Tab,
-  tags: ['autodocs'], // Optional: Enables Storybook Docs
-  argTypes: {
-    title: {
-      control: 'text',
-      description: 'title inside the tab',
-    },
-    disabled: {
-      control: 'boolean',
-      description: 'disabled',
-    },
-  },
+  tags: ['autodocs'],
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Tab>;
 
-export const Active: Story = {
+export const Default: Story = {
   args: {
-    title: 'active tab',
-    disabled: false,
+    tabs: mockTabs,
   },
   parameters: {
     docs: {
-      storyDescription: 'Active tab',
-    },
-  },
-};
-export const Disabled: Story = {
-  args: {
-    title: 'disabled tab',
-    disabled: true,
-  },
-  parameters: {
-    docs: {
-      storyDescription: 'Disabled tab',
+      storyDescription: 'Default tab set with a disabled tab.',
     },
   },
 };

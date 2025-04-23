@@ -1,28 +1,50 @@
 @import '../../../app/page.module.scss';
 
-.tab_container {
-  @include H3;
+.tabs {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabList {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  text-align: center;
-  font-family: Inter, sans-serif;
-  color: var(--accent-500);
-  text-transform: capitalize;
-  padding: 10px 0;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tabButton {
+  @include H3;
+  font-family: inherit;
+  background: none;
+  border: none;
+  padding: 0.5rem 3rem;
+  cursor: pointer;
+  color: var(--dark-100);
+  border-color: var(--dark-100);
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:active {
+    background-color: rgba(35, 78, 153, 0.15);
+  }
+}
+
+.active {
   border: none;
   border-bottom: 2px solid var(--accent-500);
-  cursor: pointer;
-  background-color: transparent;
+  color: var(--accent-500);
 
   &:active {
     background-color: rgba(115, 165, 255, 0.15);
   }
 
-  &:hover {
-    background-color: rgba(35, 78, 153, 0.15);
-  }
-
   &:focus {
     outline: 2px solid var(--accent-500);
+
   }
 
   &:disabled {
@@ -30,16 +52,8 @@
     border-color: var(--accent-900);
     cursor: not-allowed;
   }
-
 }
 
-.inactive {
-  color: var(--dark-100);
-  border-color: var(--dark-100);
-
-  &:disabled {
-    color: var(--dark-300);
-    border-color: var(--dark-300);
-  }
-
+.tabPanel {
+  padding: 1rem 0;
 }

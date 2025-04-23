@@ -1,0 +1,43 @@
+@import '../../../app/page.module.scss';
+
+.sidebar_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+  width: fit-content;
+  background: black;
+  box-sizing: border-box;
+
+  li {
+    list-style: none;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  ul:first-child {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.item_container {
+  @include Regular_text_14;
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  color: var(--light-100);
+  padding-right: 40px;
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+}

@@ -4,22 +4,42 @@ import React, { useState } from 'react';
 import styles from './Tab.module.scss';
 
 type TabProps = {
-  title: string;
+  label: string;
   disabled?: boolean;
+  content: React.ReactNode;
 };
-export const Tab = ({ title, disabled = false }: TabProps) => {
-  const [active, setActive] = useState(true);
+type TabsProps = {
+  tabs: TabProps[];
+};
+
+export const Tab: React.FC<TabsProps> = ({ tabs }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <>
-      <button
-        className={`${styles.tab_container} ${active ? '' : styles.inactive} ${disabled ? styles.disabled : ''}`}
-        onClick={() => {
-          setActive((prev) => !prev);
-        }}
-        disabled={disabled}
+    <div className={styles.tabs}>
+      <div className={styles.tabList} role="tablist">
+        {tabs.map((tab, index) => (
+          <button
+            key={tab.label}
+            className={`${styles.tabButton} ${activeIndex === index ? styles.active : ''}`}
+            role="tab"
+            aria-selected={activeIndex === index}
+            aria-controls={`content-${index}`}
+            onClick={() => setActiveIndex(index)}
+            disabled={tab.disabled}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <div
+        id={`content-${activeIndex}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${activeIndex}`}
       >
-        {title}
-      </button>
-    </>
+        {tabs[activeIndex].content}
+      </div>
+    </div>
   );
 };

@@ -1,0 +1,53 @@
+@import '../../../../app/page.module.scss';
+.button {
+  padding: 6px 12px;
+  border: 1px solid var(--dark-300);
+  border-radius: 2px;
+  background-color: var(--dark-500);
+  color: var(--light-100);
+
+  &:focus {
+    border: 2px solid var(--primary-700);
+  }
+
+  &:not(.buttonDisabled, .buttonError) {
+    &:hover {
+      border-color: var(--dark-100);
+    }
+  }
+}
+
+.buttonDisabled {
+  border-color: var(--dark-300);
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.buttonError {
+  border-color: var(--danger-500);
+  background-color: var(--dark-500);
+}
+
+.buttonContent {
+  display: flex;
+}
+
+.dateText {
+  @include Regular_text_16;
+  display: inline-block;
+  margin: 0 23px 0 0;
+}
+
+.textDisabled {
+  color: var(--light-900);
+}
+
+.textError {
+  color: var(--danger-500);
+}
+
+.iconError {
+  color: var(--danger-500);
+}

@@ -1,10 +1,12 @@
+'use client';
+
 import type { InputHTMLAttributes } from 'react';
 
 import { clsx } from 'clsx';
 
 import { IconSvg } from './iconSvg/IconSvg';
 
-import s from './Checkbox.module.scss';
+import styles from './Checkbox.module.scss';
 
 type CheckboxProps = {
   value?: string;
@@ -13,10 +15,12 @@ type CheckboxProps = {
 
 export const Checkbox = ({ value, disabled, ...props }: CheckboxProps) => {
   return (
-    <label className={clsx(s.label, disabled && s.disabled)}>
-      <div className={clsx(s.checkboxContainer, disabled && s.disabled)}>
+    <label className={clsx(styles.label, disabled && styles.disabled)}>
+      <div
+        className={clsx(styles.checkboxContainer, disabled && styles.disabled)}
+      >
         <input
-          className={clsx(s.checkbox, disabled && s.disabled)}
+          className={clsx(styles.checkbox, disabled && styles.disabled)}
           type="checkbox"
           disabled={disabled}
           {...props}
@@ -25,7 +29,7 @@ export const Checkbox = ({ value, disabled, ...props }: CheckboxProps) => {
           width="17"
           height="17"
           iconId={'checkmark-outline'}
-          className={s.svg}
+          className={styles.svg}
         />
       </div>
       {value}

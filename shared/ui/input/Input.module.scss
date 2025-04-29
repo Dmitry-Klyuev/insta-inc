@@ -7,7 +7,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
-  max-width: 280px;
+  max-width: 100%;
 
   & svg {
     width: 20px;
@@ -17,7 +17,7 @@
 
 .input_body {
   @include Regular_text_16;
-  width: 280px;
+  width: 100%;
   color: var(--light-900);
   font-family: Inter sans-serif;
   box-sizing: border-box;
@@ -96,4 +96,5 @@
 .error_message {
   color: var(--danger-500);
   @include Regular_text_14;
+  margin-bottom: -24px;
 }

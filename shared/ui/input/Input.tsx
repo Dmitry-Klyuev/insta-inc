@@ -9,6 +9,7 @@ type InputProps = {
   type?: BasicInputTypes;
   placeholder?: string;
   error?: boolean;
+  errorText?: string;
   disabled?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -18,6 +19,7 @@ export const Input = ({
   placeholder,
   error = false,
   disabled = false,
+  errorText,
   ...props
 }: InputProps) => {
   //placeholder
@@ -80,7 +82,11 @@ export const Input = ({
           </button>
         )}
       </div>
-      {error && <span className={styles.error_message}>Error</span>}
+      {error && (
+        <div className={styles.error_message}>
+          <div>{errorText}</div>
+        </div>
+      )}
     </>
   );
 };

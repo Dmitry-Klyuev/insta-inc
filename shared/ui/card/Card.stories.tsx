@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { Card } from './Card';
 
-import '../../../app/globals.css';
+import '../../../app/globals.scss';
 
 const meta: Meta<typeof Card> = {
   title: 'UI/Card',

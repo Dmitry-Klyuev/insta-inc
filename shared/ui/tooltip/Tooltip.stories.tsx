@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import '../../../app/globals.css';
+
+import '../../../app/globals.scss';
 import { Tooltip } from './Tooltip';
 
 const meta: Meta<typeof Tooltip> = {

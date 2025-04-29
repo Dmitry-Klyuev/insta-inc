@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { Pagination } from './Pagination';
 
-import '../../../app/globals.css';
+import '../../../app/globals.scss';
 
 const meta: Meta<typeof Pagination> = {
   title: 'UI/Pagination',

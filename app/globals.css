@@ -30,3 +30,23 @@
   --light-700: #D5DAE0;
   --light-900: #8D9094;
 }
+
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-300);
+  border-radius: 3px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--light-900);
+}

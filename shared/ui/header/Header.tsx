@@ -1,6 +1,10 @@
 'use client';
 
+import { useState } from 'react';
+
 import { Button } from 'shared/ui/button/Button';
+import { SelectLanguageItem } from 'shared/ui/select/LanguageItem';
+import { Select } from 'shared/ui/select/Select';
 
 import s from './Header.module.scss';
 
@@ -24,19 +28,18 @@ export const Header = ({
   const notificationHandler = () => {
     onNotificationClick?.();
   };
+  const [language, setLanguage] = useState<string>('English');
 
   return (
     <header className={s.header}>
       <h1 className={s.title}>{title}</h1>
       <div className={s.content}>
         <div className={s.language_select}>
-          <form name={''}>
-            <select className={s.temp_select} name="language" size={1}>
-              <option value="English">English</option>
-              <option value="Russian">Русский</option>
-              <option value="France">France</option>
-            </select>
-          </form>
+          <Select
+            onChange={(value) => setLanguage(value as SelectLanguageItem)}
+            selectedLanguage={true}
+            value={language}
+          />
         </div>
         {isAuth ? (
           <div className={s.alarm}>
@@ -52,14 +55,10 @@ export const Header = ({
             </button>
           </div>
         ) : (
-          <>
-            <div className={s.login_button}>
-              <Button title="Log in" variant="link" onClick={onLogin} />
-            </div>
-            <div className={s.login_button}>
-              <Button title="Sign up" variant="primary" onClick={onSignup} />
-            </div>
-          </>
+          <div className={s.login_button}>
+            <Button title="Log in" variant="link" onClick={onLogin} />
+            <Button title="Sign up" variant="primary" onClick={onSignup} />
+          </div>
         )}
       </div>
     </header>

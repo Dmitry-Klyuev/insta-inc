@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import Link from 'next/link';
+
 import { Button } from 'shared/ui/button/Button';
 import { SelectLanguageItem } from 'shared/ui/select/LanguageItem';
 import { Select } from 'shared/ui/select/Select';
@@ -32,7 +34,9 @@ export const Header = ({
 
   return (
     <header className={s.header}>
-      <h1 className={s.title}>{title}</h1>
+      <Link href="/">
+        <h1 className={s.title}>{title}</h1>
+      </Link>
       <div className={s.content}>
         <div className={s.language_select}>
           <Select

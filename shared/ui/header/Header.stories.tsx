@@ -19,11 +19,13 @@ const meta: Meta<typeof Header> = {
       control: 'boolean',
       description: 'Состояние авторизации пользователя',
     },
+    // Добавлено новое поле для управления количеством уведомлений
     notificationCount: {
       control: {
         type: 'number',
         min: 0,
         max: 999,
+        step: 1,
       },
       description: 'Количество непрочитанных уведомлений',
     },
@@ -39,10 +41,10 @@ const meta: Meta<typeof Header> = {
   args: {
     title: 'Inctagram',
     isAuth: false,
+    // Добавлено значение по умолчанию для notificationCount
     notificationCount: 0,
     onLogin: () => {},
     onSignup: () => {},
-    onNotificationClick: () => {},
   },
 };
 
@@ -53,6 +55,8 @@ type Story = StoryObj<typeof Header>;
 export const NotAuthenticated: Story = {
   args: {
     isAuth: false,
+    // Добавлено явное указание notificationCount
+    notificationCount: 0,
   },
   parameters: {
     docs: {
@@ -65,8 +69,8 @@ export const NotAuthenticated: Story = {
 export const Authenticated: Story = {
   args: {
     isAuth: true,
+    // Установлено значение 3 для демонстрации уведомлений
     notificationCount: 3,
-    onNotificationClick: () => console.log('Notification clicked!'),
   },
   parameters: {
     docs: {
@@ -79,6 +83,7 @@ export const Authenticated: Story = {
 export const AuthenticatedWithoutNotifications: Story = {
   args: {
     isAuth: true,
+    // Явно указано 0 уведомлений
     notificationCount: 0,
   },
   parameters: {
@@ -100,6 +105,8 @@ export const InteractiveExample: Story = {
   ),
   args: {
     isAuth: false,
+    // Добавлено значение по умолчанию
+    notificationCount: 0,
   },
   parameters: {
     docs: {

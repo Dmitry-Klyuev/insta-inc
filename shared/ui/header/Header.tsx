@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 import { Button } from 'shared/ui/button/Button';
+import { Alarm } from 'shared/ui/header/alarm/Alarm';
 import { SelectLanguageItem } from 'shared/ui/select/LanguageItem';
 import { Select } from 'shared/ui/select/Select';
 
@@ -15,8 +16,7 @@ type Props = {
   isAuth: boolean;
   onLogin: () => void;
   onSignup: () => void;
-  notificationCount?: number;
-  onNotificationClick?: () => void;
+  notificationCount?: number; // временно для сторибук
 };
 
 export const Header = ({
@@ -24,12 +24,8 @@ export const Header = ({
   isAuth,
   onLogin,
   onSignup,
-  notificationCount = 0,
-  onNotificationClick,
+  notificationCount,
 }: Props) => {
-  const notificationHandler = () => {
-    onNotificationClick?.();
-  };
   const [language, setLanguage] = useState<string>('English');
 
   return (
@@ -47,19 +43,8 @@ export const Header = ({
         </div>
         {isAuth ? (
           <div className={styles.alarm}>
-            <button
-              className={styles.notification}
-              onClick={notificationHandler}
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <use xlinkHref="/sprite/sprite-icons.svg#outline-bell" />
-              </svg>
-              {notificationCount > 0 && (
-                <span className={styles.notification_badge}>
-                  {notificationCount}
-                </span>
-              )}
-            </button>
+            {/*пропс notificationCount временно, для сторибук*/}
+            <Alarm notificationCount={notificationCount} />{' '}
           </div>
         ) : (
           <div className={styles.login_button}>

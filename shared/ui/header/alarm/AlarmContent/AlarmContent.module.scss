@@ -1,0 +1,48 @@
+@import '../../../../../app/page.module.scss';
+
+.notificationTooltipContent {
+  padding: 0 6px;
+  width: 100%;
+  max-height: 400px;
+  margin-right: 20px;
+}
+
+.header {
+  @include Bold_text_14;
+  padding-bottom: 12px;
+}
+
+.notificationContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notificationHeader {
+  @include Bold_text_14;
+}
+
+.notificationNewBadge {
+  @include Small_text;
+
+  color: var(--accent-500);
+  margin-left: 6px;
+}
+
+.notificationItem {
+  padding-top: 8px;
+  border-top: 1px solid var(--dark-100);
+
+}
+
+.notificationTitle {
+  @include Regular_text_14;
+  text-decoration: none !important;
+  cursor: pointer;
+  color: inherit !important;
+}
+
+.notificationTime {
+  color: var(--light-900);
+  line-height: 14px;
+}

@@ -10,29 +10,24 @@
 
 .tooltip {
   position: absolute;
-  padding: 8px;
-  background-color: var(--light-100);
-  color: var(--dark-100);
+  background-color: var(--dark-300);
   border: 1px solid var(--light-900);
+  color: var(--light-100);
+  overflow-wrap: break-word;
   border-radius: 4px;
   font-size: 14px;
   line-height: 1.4;
-  z-index: 100;
-  opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none;
-  max-width: 600px;
-  min-width: 150px;
-  white-space: normal;
+  pointer-events: auto;
   word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.content {
-  display: inline-block;
-}
-
-.visible {
+  max-width: 355px;
+  min-width: auto;
+  width: max-content;
+  max-height: 400px;
+  white-space: normal;
+  cursor: default;
+  padding: 8px;
+  z-index: 100;
   opacity: 1;
 }
 

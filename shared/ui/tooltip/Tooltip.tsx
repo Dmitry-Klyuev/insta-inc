@@ -1,40 +1,51 @@
 'use client';
 
-import React, { useState } from 'react';
-import s from './Tooltip.module.scss';
+import React, { useEffect, useRef, useState } from 'react';
+
+import { clsx } from 'clsx';
+
+import styles from './Tooltip.module.scss';
 
 type TooltipPosition = 'top' | 'bottom' | 'left' | 'right';
 
 type TooltipProps = {
   children: React.ReactNode;
-  text: string;
+  content: React.ReactNode;
   position?: TooltipPosition;
-  delay?: number;
+  openDelay?: number;
+  closedDelay?: number;
+  className?: string;
 };
 
 export const Tooltip = ({
   children,
-  text,
-  delay = 200,
+  content,
+  openDelay = 200,
+  closedDelay = 200,
   position = 'top',
+  className,
 }: TooltipProps) => {
-  const [isVisible, setIsVisible] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const timeoutRef = useRef<number | NodeJS.Timeout | undefined>(undefined);
 
   const handleMouseEnter = () => {
-    setIsMounted(true);
-    setTimeout(() => setIsVisible(true), delay);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setIsMounted(true), openDelay);
   };
 
   const handleMouseLeave = () => {
-    setIsVisible(false);
-    setTimeout(() => setIsMounted(false), delay);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setIsMounted(false), closedDelay);
   };
 
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+  }, [openDelay, closedDelay]);
+
   return (
-    <div className={s.wrapper}>
+    <div className={clsx(styles.wrapper, className)}>
       <div
-        className={s.trigger}
+        className={styles.trigger}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -42,9 +53,11 @@ export const Tooltip = ({
       </div>
       {isMounted && (
         <div
-          className={`${s.tooltip} ${s[position]} ${isVisible ? s.visible : ''}`}
+          className={`${styles.tooltip} ${styles[position]}`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
-          <span className={s.content}>{text}</span>
+          {content}
         </div>
       )}
     </div>

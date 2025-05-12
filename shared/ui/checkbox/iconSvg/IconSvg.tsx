@@ -25,7 +25,7 @@ export const IconSvg = ({
       stroke={stroke}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <use xlinkHref={`/public/sprite/sprite-icons.svg#${iconId}`} />
+      <use xlinkHref={`/sprite/sprite-icons.svg#${iconId}`} />
     </svg>
   );
 };

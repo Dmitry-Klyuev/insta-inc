@@ -1,5 +1,7 @@
 import { Inter } from 'next/font/google';
 
+import { Providers } from 'shared/providers/providers';
+
 import type { Metadata } from 'next';
 import '../styles/globals.scss';
 
@@ -20,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.variable}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

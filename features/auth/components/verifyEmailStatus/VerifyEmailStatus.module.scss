@@ -1,0 +1,84 @@
+@use '../../../../app/page.module' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.modalBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalBtn {
+  width: 100%;
+  margin-top: 18px;
+  max-width: 96px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35px;
+  max-width: 294px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+    max-width: 330px;
+  }
+}
+
+.title {
+  @include H1;
+  margin-bottom: 20px;
+}
+
+.description {
+  @include Regular_text_16;
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.visualBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.btn {
+  margin-bottom: 36px;
+  max-width: fit-content;
+  width: 100%;
+  min-width: 182px;
+
+  @media (max-width: 768px) {
+    max-width: none;
+    padding: 0 15px;
+  }
+}
+
+.image {
+  max-width: 432px;
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 768px) {
+    padding: calc(66px - 54px) 15px 46px;
+    box-sizing: border-box;
+  }
+}

@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import '../../../styles/globals.scss';
+import { Button } from 'shared/ui/button/Button';
 import { Tooltip } from './Tooltip';
 
 const meta: Meta<typeof Tooltip> = {
@@ -80,9 +81,9 @@ export const Positions: Story = {
 
 export const WithDelay: Story = {
   args: {
-    content: 'Появляется с задержкой',
-    openDelay: 200,
-    closedDelay: 200,
+    content: 'Появляется / исчезает с задержкой',
+    openDelay: 500,
+    closedDelay: 500,
     children: 'Наведи и подожди',
   },
   parameters: {
@@ -96,7 +97,9 @@ export const ComplexChildren: Story = {
   args: {
     content: 'Подсказка для сложного элемента',
     children: (
-      <div style={{ padding: '10px', background: '#eee', borderRadius: '4px' }}>
+      <div
+        style={{ padding: '10px', background: '#397DF6', borderRadius: '4px' }}
+      >
         Элемент с тултипом
       </div>
     ),
@@ -110,12 +113,28 @@ export const ComplexChildren: Story = {
 
 export const TextTrigger: Story = {
   args: {
+    content: 'текст сообщения',
+    position: 'top',
     children: 'Простой текст',
   },
 };
 
 export const ButtonTrigger: Story = {
   args: {
-    children: <button>Кнопка</button>,
+    content: 'текст сообщения',
+    position: 'top',
+    closedDelay: 500000,
+    children: (
+      <div
+        style={{
+          display: 'block',
+          width: 'fit-content',
+          margin: '0 auto',
+          position: 'relative',
+        }}
+      >
+        <Button title={'Button'} variant={'outlined'} />
+      </div>
+    ),
   },
 };

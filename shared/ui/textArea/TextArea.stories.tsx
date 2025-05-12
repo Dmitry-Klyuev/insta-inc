@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import '../../../app/globals.scss';
+import '../../../styles/globals.scss';
 
 import { TextArea } from './TextArea';
 

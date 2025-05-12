@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import '../../../app/globals.scss';
+import '../../../styles/globals.scss';
+import { Button } from 'shared/ui/button/Button';
 import { Tooltip } from './Tooltip';
 
 const meta: Meta<typeof Tooltip> = {
@@ -11,7 +12,7 @@ const meta: Meta<typeof Tooltip> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    text: {
+    content: {
       control: 'text',
       description: 'Текст подсказки',
     },
@@ -20,9 +21,13 @@ const meta: Meta<typeof Tooltip> = {
       options: ['top', 'bottom', 'left', 'right'],
       description: 'Позиция тултипа относительно элемента',
     },
-    delay: {
+    openDelay: {
       control: 'number',
-      description: 'Задержка появления/исчезновения (мс)',
+      description: 'Задержка появления (мс)',
+    },
+    closedDelay: {
+      control: 'number',
+      description: 'Задержка исчезновения (мс)',
     },
     children: {
       control: 'text',
@@ -37,7 +42,7 @@ type Story = StoryObj<typeof Tooltip>;
 
 export const Default: Story = {
   args: {
-    text: 'Это текст подсказки',
+    content: 'Это текст подсказки',
     children: 'Наведи на меня',
   },
   parameters: {
@@ -65,7 +70,7 @@ export const Positions: Story = {
     </div>
   ),
   args: {
-    text: 'Подсказка в разных позициях',
+    content: 'Подсказка в разных позициях',
   },
   parameters: {
     docs: {
@@ -76,8 +81,9 @@ export const Positions: Story = {
 
 export const WithDelay: Story = {
   args: {
-    text: 'Появляется с задержкой',
-    delay: 200,
+    content: 'Появляется / исчезает с задержкой',
+    openDelay: 500,
+    closedDelay: 500,
     children: 'Наведи и подожди',
   },
   parameters: {
@@ -89,9 +95,11 @@ export const WithDelay: Story = {
 
 export const ComplexChildren: Story = {
   args: {
-    text: 'Подсказка для сложного элемента',
+    content: 'Подсказка для сложного элемента',
     children: (
-      <div style={{ padding: '10px', background: '#eee', borderRadius: '4px' }}>
+      <div
+        style={{ padding: '10px', background: '#397DF6', borderRadius: '4px' }}
+      >
         Элемент с тултипом
       </div>
     ),
@@ -105,12 +113,28 @@ export const ComplexChildren: Story = {
 
 export const TextTrigger: Story = {
   args: {
+    content: 'текст сообщения',
+    position: 'top',
     children: 'Простой текст',
   },
 };
 
 export const ButtonTrigger: Story = {
   args: {
-    children: <button>Кнопка</button>,
+    content: 'текст сообщения',
+    position: 'top',
+    closedDelay: 500000,
+    children: (
+      <div
+        style={{
+          display: 'block',
+          width: 'fit-content',
+          margin: '0 auto',
+          position: 'relative',
+        }}
+      >
+        <Button title={'Button'} variant={'outlined'} />
+      </div>
+    ),
   },
 };

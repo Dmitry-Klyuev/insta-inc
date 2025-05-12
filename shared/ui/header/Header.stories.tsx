@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import '../../../app/globals.scss';
+import '../../../styles/globals.scss';
 import { Header } from './Header';
 
 const meta: Meta<typeof Header> = {

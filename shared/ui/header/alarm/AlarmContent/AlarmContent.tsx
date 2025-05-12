@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-
 import Link from 'next/link';
+import { useState } from 'react';
 
 import { Scrollbar } from 'shared/ui/scrollbar/Scrollbar';
 
@@ -24,32 +23,32 @@ export const AlarmContent = () => {
     },
     {
       id: 3,
-      title: 'Ваша подписка истекает через 7 дней',
-      time: '1 день назад',
+      title: 'Ваша подписка истекает через 14 дней',
+      time: '7 дней назад',
       isNew: true,
     },
     {
       id: 4,
-      title: 'Ваша подписка истекает через 7 дней',
-      time: '1 день назад',
+      title: 'Ваша подписка истекает через 30 дней',
+      time: '14 дней назад',
       isNew: false,
     },
     {
-      id: 4,
-      title: 'Ваша подписка истекает через 7 дней',
-      time: '1 день назад',
+      id: 5,
+      title: 'Ваша подписка истекает через 30 дней',
+      time: '14 дней назад',
       isNew: false,
     },
     {
-      id: 4,
-      title: 'Ваша подписка истекает через 7 дней',
-      time: '1 день назад',
+      id: 6,
+      title: 'Ваша подписка истекает через 30 дней',
+      time: '14 дней назад',
       isNew: false,
     },
     {
-      id: 4,
-      title: 'Ваша подписка истекает через 7 дней',
-      time: '1 день назад',
+      id: 7,
+      title: 'Ваша подписка истекает через 30 дней',
+      time: '14 дней назад',
       isNew: false,
     },
   ]);

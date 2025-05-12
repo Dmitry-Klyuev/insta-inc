@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-
 import Link from 'next/link';
+import { useState } from 'react';
 
 import { Button } from 'shared/ui/button/Button';
 import { Alarm } from 'shared/ui/header/alarm/Alarm';
@@ -12,18 +11,14 @@ import { Select } from 'shared/ui/select/Select';
 import styles from './Header.module.scss';
 
 type Props = {
-  title: string;
-  isAuth: boolean;
-  onLogin: () => void;
-  onSignup: () => void;
+  title?: string;
+  isAuth?: boolean;
   notificationCount?: number; // временно для сторибук
 };
 
 export const Header = ({
-  title,
-  isAuth,
-  onLogin,
-  onSignup,
+  title = 'Inctagram',
+  isAuth = false,
   notificationCount,
 }: Props) => {
   const [language, setLanguage] = useState<string>('English');
@@ -44,12 +39,16 @@ export const Header = ({
         {isAuth ? (
           <div className={styles.alarm}>
             {/*пропс notificationCount временно, для сторибук*/}
-            <Alarm notificationCount={notificationCount} />{' '}
+            <Alarm notificationCount={notificationCount} />
           </div>
         ) : (
           <div className={styles.login_button}>
-            <Button title="Log in" variant="link" onClick={onLogin} />
-            <Button title="Sign up" variant="primary" onClick={onSignup} />
+            <Link href={'/signin'}>
+              <Button title="Log in" variant="link" />
+            </Link>
+            <Link href={'/signup'}>
+              <Button title="Sign up" variant="primary" />
+            </Link>
           </div>
         )}
       </div>

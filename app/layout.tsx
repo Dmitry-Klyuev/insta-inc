@@ -1,7 +1,8 @@
-import { Inter } from 'next/font/google';
-
 import type { Metadata } from 'next';
 import '../styles/globals.scss';
+import { Inter } from 'next/font/google';
+import React from 'react';
+import { Header } from 'shared/ui/header/Header';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.variable}>
+        <Header />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

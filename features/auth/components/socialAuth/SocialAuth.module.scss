@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 14px 0 24px;
+
+  & :active{
+    transform: scale(0.97, 0.97);
+  }
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+}

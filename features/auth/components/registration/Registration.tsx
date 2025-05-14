@@ -14,11 +14,11 @@ import { z } from 'zod';
 
 import { useRegistrationMutation } from '@/features/api/api';
 import type { ApiErrorResponse } from '@/features/api/types';
+import SocialAuth from '@/features/auth/components/socialAuth/SocialAuth';
 import { RegistrationSchema } from '@/features/auth/schema/RegistrationSchema';
 import { Button } from 'shared/ui/button/Button';
 import { Card } from 'shared/ui/card/Card';
 import { Checkbox } from 'shared/ui/checkbox/Checkbox';
-import { IconSvg } from 'shared/ui/checkbox/iconSvg/IconSvg';
 import { Input } from 'shared/ui/input/Input';
 import { DefaultModal } from 'shared/ui/modal/defaultModal/DefaultModal';
 
@@ -106,10 +106,7 @@ const Registration = () => {
       />
       <Card>
         <h1 className={styles.title}>Sign Up</h1>
-        <div className={styles.containerIcon}>
-          <IconSvg iconId="google" width="36" height="36" />
-          <IconSvg iconId="github" width="36" height="36" />
-        </div>
+        <SocialAuth />
         <div className={styles.registrationContainer}>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.inputContainer}>

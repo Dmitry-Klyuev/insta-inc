@@ -1,18 +1,23 @@
 'use client';
-import { useState } from 'react';
+import { redirect } from 'next/navigation';
 
-import { Card } from 'shared/ui/card/Card';
-import { TextArea } from 'shared/ui/textArea/TextArea';
-
-import styles from './page.module.scss';
+// import { useMeQuery } from '@/features/api/api';
 
 export default function Home() {
+  // const { data, isLoading } = useMeQuery();
+
+  // console.log(data);
+
   return (
-    <div className={styles.page}>
-      dsdsd
-      <Card className={{ display: 'flex', justifyContent: 'center' }}>
-        Hello
-      </Card>
+    <div>
+      <button
+        onClick={() => {
+          redirect('/auth/sign-up');
+        }}
+      >
+        sign up
+      </button>
+      APP
     </div>
   );
 }

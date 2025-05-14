@@ -11,6 +11,16 @@ export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_INCTAGRAM_URL,
+    prepareHeaders: (headers) => {
+      if (typeof document !== 'undefined') {
+        const match = document.cookie.match(/accessToken=([^;]+)/);
+        const token = match?.[1];
+        if (token) {
+          headers.set('Authorization', `Bearer ${token}`);
+        }
+      }
+      return headers;
+    },
   }),
   endpoints: (build) => ({
     me: build.query<MeResponse, void>({

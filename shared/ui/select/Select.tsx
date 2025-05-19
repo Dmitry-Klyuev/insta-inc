@@ -49,7 +49,6 @@ export const Select = ({
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
-
   const mergedSelectStyle: CSSProperties = {
     maxWidth: typeof width === 'number' ? `${width}px` : width || '100%',
     width: '100%',
@@ -67,7 +66,7 @@ export const Select = ({
 
   return (
     <>
-      <span className={styles.label}>{label}</span>
+      {label && <span className={styles.label}>{label}</span>}
       <SelectRadix.Root
         onOpenChange={handleOpenChange}
         onValueChange={onChange}
@@ -95,11 +94,9 @@ export const Select = ({
               )}
             </div>
             <SelectRadix.Icon className={styles.iconArrowsWrapper}>
-              {isOpen ? (
-                <IconSvg iconId={'arrow-ios-Up'} />
-              ) : (
-                <IconSvg iconId={'arrow-ios-Down-outline'} />
-              )}
+              <IconSvg
+                iconId={isOpen ? 'arrow-ios-Up' : 'arrow-ios-Down-outline'}
+              />
             </SelectRadix.Icon>
           </SelectRadix.Trigger>
           <SelectRadix.Content className={styles.content} position="popper">

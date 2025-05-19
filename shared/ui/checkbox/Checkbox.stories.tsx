@@ -14,9 +14,9 @@ const meta: Meta<typeof Checkbox> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    value: {
+    label: {
       control: 'text',
-      description: 'Текст метки рядом с чекбоксом',
+      description: 'Текст рядом с чекбоксом',
     },
     disabled: {
       control: 'boolean',
@@ -25,6 +25,14 @@ const meta: Meta<typeof Checkbox> = {
     onChange: {
       action: 'changed',
       description: 'Callback при изменении состояния',
+    },
+    checkboxSize: {
+      control: 'number',
+      description: 'Задается размер самого чекбокс',
+    },
+    valueFontSize: {
+      control: 'number',
+      description: 'Размер текста метки рядом с чекбоксом',
     },
   },
 };
@@ -35,7 +43,7 @@ type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {
   args: {
-    value: 'Default Checkbox',
+    label: 'Default Checkbox',
   },
   parameters: {
     docs: {
@@ -57,7 +65,7 @@ export const DefaultWithoutValue: Story = {
 
 export const Active: Story = {
   args: {
-    value: 'Active Checkbox',
+    label: 'Active Checkbox',
     checked: true,
   },
   parameters: {
@@ -71,7 +79,7 @@ export const Active: Story = {
 
 export const Disabled: Story = {
   args: {
-    value: 'Disabled Checkbox',
+    label: 'Disabled Checkbox',
     disabled: true,
   },
   parameters: {

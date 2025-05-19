@@ -1,0 +1,59 @@
+@use '../../../app/page.module.scss' as *;
+
+.container {
+  margin: 24px 60px 0;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+}
+
+.linkTitle {
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+}
+
+.linkContainer {
+  @include Regular_text_14;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--light-100);
+  max-width: fit-content;
+
+  @media (max-width: 768px) {
+    margin-left: 15px;
+    justify-self: start;
+  }
+}
+
+.titleLink {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.title {
+  @include H1;
+  text-align: center;
+  margin: 23px 0 20px;
+
+  @media (max-width: 768px) {
+    margin: 18px 0 15px;
+    justify-self: center;
+  }
+}
+
+.text {
+  text-align: center;
+  margin: 0 160px;
+  padding-bottom: 32px;
+
+  @media (max-width: 768px) {
+    margin: 0 15px;
+  }
+}

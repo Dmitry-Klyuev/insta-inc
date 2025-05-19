@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, type MouseEvent } from 'react';
 
 import styles from './Input.module.scss';
 
@@ -41,7 +41,8 @@ export const Input = ({
     })();
   //show password button
   const [showPassword, setShowPassword] = useState(false);
-  const showPasswordToggle = () => {
+  const showPasswordToggle = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     setShowPassword((prev) => !prev);
   };
   //search button
@@ -69,7 +70,7 @@ export const Input = ({
         {type === 'password' && (
           <button
             className={styles.btn_show_password}
-            onClick={showPasswordToggle}
+            onClick={(e) => showPasswordToggle(e)}
           >
             <svg
               width="24"
@@ -87,6 +88,7 @@ export const Input = ({
           <div>{errorText}</div>
         </div>
       )}
+
     </>
   );
 };

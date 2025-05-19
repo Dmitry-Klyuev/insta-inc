@@ -3,14 +3,17 @@
 $disabled-cursor: not-allowed;
 $cursor-pointer: pointer;
 
+.containerComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px
+}
+
 .label {
-  @include Regular_text_14;
-  color: var(--light-100);
   display: flex;
   align-items: center;
-  gap: 2px;
-  width: fit-content;
-  cursor: $cursor-pointer;
+  cursor: pointer;
 
   &.disabled {
     cursor: $disabled-cursor;
@@ -55,7 +58,6 @@ $cursor-pointer: pointer;
   height: 18px;
   border-radius: 10%;
   cursor: $cursor-pointer;
-  z-index: 1;
   margin: 0;
 
   &:checked ~ .svg {
@@ -74,16 +76,22 @@ $cursor-pointer: pointer;
 
 .svg {
   position: absolute;
-  left: 18px;
-  top: 18px;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   display: none;
   pointer-events: none;
   background-color: var(--light-100);
   color: var(--dark-900);
+  border-radius: 10%;
 
   .checkbox.disabled:checked ~ & {
     color: var(--light-700);
     background-color: var(--dark-100);
   }
+}
+
+.link {
+  font-family: sans-serif;
+  padding-right: 9px;
 }

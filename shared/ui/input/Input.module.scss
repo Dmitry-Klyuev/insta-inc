@@ -60,7 +60,6 @@
   border: none;
   text-transform: capitalize;
   padding: 0;
-
 }
 
 .btn {
@@ -68,7 +67,7 @@
   background-color: transparent;
   cursor: pointer;
   position: absolute;
-
+  color: var(--light-100);
 }
 
 .btn_show_password {
@@ -76,7 +75,6 @@
   right: 0;
   top: 75%;
   transform: translateY(-50%);
-
 }
 
 .btn_search {
@@ -97,5 +95,4 @@
 .error_message {
   color: var(--danger-500);
   @include Regular_text_14;
-  //margin-bottom: -50px;
 }

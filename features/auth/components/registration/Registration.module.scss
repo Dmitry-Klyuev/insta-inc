@@ -1,0 +1,74 @@
+@import '../../../../app/page.module';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  padding-bottom: 32px;
+}
+
+.title {
+  @include H1;
+  text-align: center;
+  margin: 23px 0 13px;
+}
+
+.containerIcon {
+  display: flex;
+  justify-content: center;
+  gap: 60px
+}
+
+.registrationContainer {
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    margin: 15px;
+  }
+}
+
+.form {
+  width: 100%;
+
+  & > :last-child {
+    margin-top: 12px;
+  }
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.checkboxContainer {
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--accent-300);
+}
+
+.error {
+  color: var(--danger-500);
+  @include Regular_text_14;
+  display: block;
+  text-align: center;
+}
+
+.buttonSignInContainer {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+

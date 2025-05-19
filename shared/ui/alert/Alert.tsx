@@ -21,7 +21,8 @@ export const Alert = ({ type = 'success', message }: AlertProps) => {
             'Your settings are saved'
           ) : (
             <>
-              <strong>Error!</strong> Server is not available
+              <strong>Error!</strong>
+              {message}
             </>
           ))}
       </span>

@@ -1,0 +1,52 @@
+.notification {
+  position: relative;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tooltip{
+  svg {
+    color: var(--light-100);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.notification_badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 11px;
+  min-width: 13px;
+  height: 13px;
+  padding: 4px;
+  background-color: var(--danger-500);
+  color: var(--light-100);
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  border-radius: 13px;
+  box-sizing: border-box;
+}
+
+//.messages {
+//
+//}
+//
+//.background {
+//  position: fixed; /* фиксированное позиционирование для распространения на всю видимую область */
+//  top: 0;
+//  left: 0;
+//  width: 100%; /* занимать 100% ширины страницы */
+//  height: 100%; /* занимать 100% высоты страницы */
+//  background-color: rgba(0, 0, 0, 0.2); /* Полупрозрачный черный цвет для затемнения */
+//  z-index: 9998; /* разместим затемнение под сайдбаром */
+//  /*background-color: black;*/
+//  /*opacity: 0.2;*/
+//}

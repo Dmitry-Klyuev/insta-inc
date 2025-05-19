@@ -1,65 +1,55 @@
 'use client';
 
-import { Button } from 'shared/ui/button/Button';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import s from './Header.module.scss';
+import { Button } from 'shared/ui/button/Button';
+import { Alarm } from 'shared/ui/header/alarm/Alarm';
+import { SelectLanguageItem } from 'shared/ui/select/LanguageItem';
+import { Select } from 'shared/ui/select/Select';
+
+import styles from './Header.module.scss';
 
 type Props = {
-  title: string;
-  isAuth: boolean;
-  onLogin: () => void;
-  onSignup: () => void;
-  notificationCount?: number;
-  onNotificationClick?: () => void;
+  title?: string;
+  isAuth?: boolean;
+  notificationCount?: number; // временно для сторибук
 };
 
 export const Header = ({
-  title,
-  isAuth,
-  onLogin,
-  onSignup,
-  notificationCount = 0,
-  onNotificationClick,
+  title = 'Inctagram',
+  isAuth = false,
+  notificationCount,
 }: Props) => {
-  const notificationHandler = () => {
-    onNotificationClick?.();
-  };
+  const [language, setLanguage] = useState<string>('English');
 
   return (
-    <header className={s.header}>
-      <h1 className={s.title}>{title}</h1>
-      <div className={s.content}>
-        <div className={s.language_select}>
-          <form name={''}>
-            <select className={s.temp_select} name="language" size={1}>
-              <option value="English">English</option>
-              <option value="Russian">Русский</option>
-              <option value="France">France</option>
-            </select>
-          </form>
+    <header className={styles.header}>
+      <Link href={'/'} className={styles.link_title}>
+        <h1 className={styles.title}>{title}</h1>
+      </Link>
+      <div className={styles.content}>
+        <div className={styles.language_select}>
+          <Select
+            onChange={(value) => setLanguage(value as SelectLanguageItem)}
+            selectedLanguage={true}
+            value={language}
+          />
         </div>
         {isAuth ? (
-          <div className={s.alarm}>
-            <button className={s.notification} onClick={notificationHandler}>
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <use xlinkHref="/sprite/sprite-icons.svg#outline-bell" />
-              </svg>
-              {notificationCount > 0 && (
-                <span className={s.notification_badge}>
-                  {notificationCount}
-                </span>
-              )}
-            </button>
+          <div className={styles.alarm}>
+            {/*пропс notificationCount временно, для сторибук*/}
+            <Alarm notificationCount={notificationCount} />
           </div>
         ) : (
-          <>
-            <div className={s.login_button}>
-              <Button title="Log in" variant="link" onClick={onLogin} />
-            </div>
-            <div className={s.login_button}>
-              <Button title="Sign up" variant="primary" onClick={onSignup} />
-            </div>
-          </>
+          <div className={styles.login_button}>
+            <Link href={'/signin'}>
+              <Button title="Log in" variant="link" />
+            </Link>
+            <Link href={'/signup'}>
+              <Button title="Sign up" variant="primary" />
+            </Link>
+          </div>
         )}
       </div>
     </header>

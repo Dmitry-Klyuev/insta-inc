@@ -1,9 +1,12 @@
+@import '../../../app/page.module.scss';
+
 .header {
   width: 100%;
   max-height: 60px;
-  background: #fff;
+  background: var(--dark-700);
+  border-bottom: 2px solid var(--dark-300);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 12px 60px;
+  padding: 12px 60px 12px 64px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -13,72 +16,40 @@
   box-sizing: border-box;
 }
 
+.link_title {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
 .title {
+  @include Large;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 36px;
   letter-spacing: 0;
-  //color: var(--light-100);
+  color: var(--light-100);
 }
 
 .content {
   display: flex;
-  gap: 10px;
   align-items: center;
+  height: 100%;
+  gap: 36px;
 }
 
 .language_select {
-
+  width: auto;
+  min-width: 163px;
 }
 
 .alarm {
+  //@include Large;
+  font-family: 'Inter', sans-serif;
   order: -1;
+  margin-right: 15px;
 }
 
-.notification {
-  position: relative;
+.login_button {
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-
-}
-
-.notification_badge {
-  position: absolute;
-  top: 6px;
-  left: 17px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 15px;
-  height: 15px;
-  padding: 4px;
-  background-color: var(--danger-500);
-  color: var(--light-100);
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: 0;
-  border-radius: 15px;
-  border: 2px solid var(--color-bg-primary);
-  box-sizing: border-box;
-}
-
-.temp_select {
-  width: 210px;
-  height: 40px;
+  justify-content: space-between;
+  gap: 24px;
 }

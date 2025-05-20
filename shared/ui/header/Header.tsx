@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+
+import Link from 'next/link';
 
 import { Button } from 'shared/ui/button/Button';
 import { Alarm } from 'shared/ui/header/alarm/Alarm';
@@ -46,7 +47,7 @@ export const Header = ({
             <Link href={'/signin'}>
               <Button title="Log in" variant="link" />
             </Link>
-            <Link href={'/signup'}>
+            <Link href={'/auth/sign-up'}>
               <Button title="Sign up" variant="primary" />
             </Link>
           </div>
